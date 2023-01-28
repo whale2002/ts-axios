@@ -1,4 +1,4 @@
-const toString = Object.prototype.toString
+const toString = Object.prototype.toString   // 缓存一下
 
 export function isDate(val: any): val is Date {
   return toString.call(val) === '[object Date]'
