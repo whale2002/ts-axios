@@ -3,6 +3,7 @@
     "strict": true,
     "declaration": true,
     "skipLibCheck": true,
+    "strictNullChecks": false,
     "baseUrl": "./",
     "lib": [
       "es2015",
