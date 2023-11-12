@@ -17,6 +17,8 @@ app.use(
     uploadDir: path.resolve(__dirname, 'upload-file'),
   }),
 )
+// 在注册路由之前注册 cors 中间价
+app.use(cors())
 
 const router = express.Router()
 
@@ -37,7 +39,6 @@ registerCancelRouter()
 registerMoreRouter()
 
 app.use(router)
-app.use(cors())
 
 app.listen(SERVER_PORT, () => {
   console.log(
@@ -59,6 +60,7 @@ function registerBaseRouter() {
   })
 
   router.post('/base/post', function (req, res) {
+    console.log(req.body)
     res.json(req.body)
   })
 

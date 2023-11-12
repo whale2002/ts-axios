@@ -6,12 +6,12 @@
 ## Develop
 
 ```bash
-$ pnpm install
+pnpm install
 ```
 
 ```bash
-$ pnpm run dev
-$ pnpm run build
+pnpm run dev
+pnpm run build
 ```
 
 ## TODO
