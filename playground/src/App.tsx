@@ -1,7 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from '../../src/index';
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    axios({
+      url: 'http://localhost:8000/simple/get',
+      method: 'get',
+      params: {
+        foo: 123
+      }
+    })
+  }, [])
 
   return (
     <>

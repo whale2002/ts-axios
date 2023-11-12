@@ -1,7 +1,7 @@
 {
-  "name": "@whale2002/ts-lib-template",
+  "name": "@whale2002/ts-axios",
   "version": "0.0.1",
-  "description": "ts-lib-template built by father",
+  "description": "rewrite axios in typescript",
   "module": "es/index.js",
   "types": "es/index.d.ts",
   "scripts": {
@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/whale2002/ts-lib-template.git"
+    "url": "git+https://github.com/whale2002/ts-axios.git"
   },
-  "homepage": "https://github.com/whale2002/ts-lib-template#readme"
+  "homepage": "https://github.com/whale2002/ts-axios#readme"
 }

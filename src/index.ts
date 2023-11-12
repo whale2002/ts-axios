@@ -1,6 +1,8 @@
-import { add, subtract } from './utils'
+import xhr from './xhr'
+import type { AxiosRequestConfig } from './types'
 
-const sum = add(1, 2)
-console.log(sum)
+function axios(config: AxiosRequestConfig) {
+  xhr(config) 
+}
 
-export { add, subtract }
+export default axios
