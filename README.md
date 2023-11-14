@@ -26,21 +26,25 @@ pnpm run build
 
 ## 步骤
 
-1. 对请求 config 进行处理，包括 url, header, body
-  - 拼接url
-  - 处理header [注意含有 data 并且 data 是对象时，一般为 post 请求, 需要设置 Content-Type 为 application/json ]
-  - 处理body，是原对象的时候需要序列化
-2. 发起请求 xhr
-3. 处理响应
-  - 处理响应体 反序列化
-  - 处理响应 header 反序列化
+对请求 config 进行处理，包括 url, header, body
+
+- 拼接 url
+- 处理 header [注意含有 data 并且 data 是对象时，一般为 post 请求, 需要设置 Content-Type 为 application/json ]
+- 处理 body，是原对象的时候需要序列化
+
+发起请求 xhr
+
+处理响应
+
+- 处理响应体 反序列化
+- 处理响应 header 反序列化
 
 异常处理
- - 网络异常 onError
- - 超时异常 onTimeout
- - 非2xx状态码
- - 创建 AxiosError 类
 
+- 网络异常 onError
+- 超时异常 onTimeout
+- 非 2xx 状态码
+- 创建 AxiosError 类
 
 ## LICENSE
 

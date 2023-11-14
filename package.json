@@ -1,6 +1,6 @@
 {
   "name": "@whale2002/ts-axios",
-  "version": "0.0.1",
+  "version": "0.2.1",
   "description": "rewrite axios in typescript",
   "module": "es/index.js",
   "types": "es/index.d.ts",
