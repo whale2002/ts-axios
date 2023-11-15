@@ -15,5 +15,9 @@
     "eslint": "^8.45.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "@types/qs": "^6.9.10",
+    "qs": "^6.11.2"
   }
 }
