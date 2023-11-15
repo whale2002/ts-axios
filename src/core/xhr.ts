@@ -1,7 +1,7 @@
 import { parseHeaders } from '../helper/headers'
 import { createError } from '../helper/error'
 import type { AxiosRequestConfig, AxiosResponse } from '../types'
-import { parseResponseData } from 'src/helper/data'
+import { parseResponseData } from '../helper/data'
 
 /**
  * 发起请求
