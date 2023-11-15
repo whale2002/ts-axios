@@ -1,6 +1,7 @@
-import { parseHeaders } from './helper/headers'
-import { createError } from './helper/error'
-import type { AxiosRequestConfig, AxiosResponse } from './types'
+import { parseHeaders } from '../helper/headers'
+import { createError } from '../helper/error'
+import type { AxiosRequestConfig, AxiosResponse } from '../types'
+import { parseResponseData } from 'src/helper/data'
 
 /**
  * 发起请求
@@ -37,7 +38,7 @@ export default function xhr(config: AxiosRequestConfig) {
       const responseData =
         responseType !== 'text' ? request.response : request.responseText
       const response: AxiosResponse = {
-        data: responseData,
+        data: parseResponseData(responseData),
         status: request.status,
         statusText: request.statusText,
         headers: responseHeaders,

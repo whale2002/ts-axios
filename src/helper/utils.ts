@@ -42,3 +42,17 @@ export function encode(val: string): string {
     .replace(/%5B/gi, '[')
     .replace(/%5D/gi, ']')
 }
+
+/**
+ * 将一个对象的属性合并到另一个对象中，并返回合并后的对象
+ * @param to - 合并的目标对象
+ * @param from - 合并的源对象
+ * @returns 合并后的对象
+ */
+export function extend<T, U>(to: T, from: U): T & U {
+  for (const key in from) {
+    ;(to as T & U)[key] = from[key] as any
+  }
+
+  return to as T & U
+}
