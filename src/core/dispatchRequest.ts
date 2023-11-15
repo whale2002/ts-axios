@@ -4,9 +4,9 @@ import { parseResponseData, stringifyRequestData } from '../helper/data'
 import { processHeaders } from '../helper/headers'
 import type { AxiosPromise, AxiosRequestConfig, AxiosResponse } from '../types'
 
-export default function dispatchRequest(
+export default function dispatchRequest<T>(
   config: AxiosRequestConfig,
-): AxiosPromise {
+): AxiosPromise<T> {
   processConfig(config)
   return xhr(config)
 }

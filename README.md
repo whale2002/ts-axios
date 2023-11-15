@@ -49,6 +49,7 @@ pnpm run build
 接口扩展
 
 - 扩展接口 axios 混合对象，支持方法调用和函数调用
+- 相应数据支持泛型
 
 ## LICENSE
 
