@@ -55,5 +55,6 @@ export interface Axios {
 }
 
 export interface AxiosInstance extends Axios {
-  (config: AxiosRequestConfig): AxiosPromise  // 本身就是一个函数
+  (config: AxiosRequestConfig): AxiosPromise // 本身就是一个函数
+  (url: string, config?: AxiosRequestConfig): AxiosPromise // 函数重载，其实是一种伪重载
 }

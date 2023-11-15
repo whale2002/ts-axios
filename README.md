@@ -46,6 +46,10 @@ pnpm run build
 - 非 2xx 状态码
 - 创建 AxiosError 类
 
+接口扩展
+
+- 扩展接口 axios 混合对象，支持方法调用和函数调用
+
 ## LICENSE
 
 MIT

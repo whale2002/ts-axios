@@ -29,3 +29,18 @@ axios.post('http://localhost:8000/extend/post', { msg: 'post' })
 axios.put('http://localhost:8000/extend/put', { msg: 'put' })
 
 axios.patch('http://localhost:8000/extend/patch', { msg: 'patch' })
+
+axios({
+  url: '/extend/post',
+  method: 'post',
+  data: {
+    msg: 'hi',
+  },
+})
+
+axios('/extend/post', {
+  method: 'post',
+  data: {
+    msg: 'hello',
+  },
+})
