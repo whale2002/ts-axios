@@ -1,4 +1,6 @@
 import { AxiosRequestConfig } from './types'
+import { processHeaders } from './helper/headers'
+import { stringifyRequestData, parseResponseData } from './helper/data'
 
 const config: AxiosRequestConfig = {
   method: 'get',
@@ -8,6 +10,17 @@ const config: AxiosRequestConfig = {
       Accept: 'application/json, text/plain, */*',
     },
   },
+  transformRequest: [
+    function (data: any, header: any) {
+      processHeaders(header, data)
+      return stringifyRequestData(data)
+    },
+  ],
+  transformResponse: [
+    function (data: any) {
+      return parseResponseData(data)
+    },
+  ],
 }
 
 const methodsWithoutData = ['delete', 'get', 'head', 'options']
