@@ -59,6 +59,9 @@ pnpm run build
 - 请求和相应配置化
 - axios.create
 
+取消请求实现
+
+
 ## LICENSE
 
 MIT
