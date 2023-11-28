@@ -9,6 +9,12 @@ const SERVER_PORT = 8000
 
 const app = express()
 
+// 在注册路由之前注册 cors 中间价
+app.use(
+  cors({
+    methods: ['GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS'],
+  }),
+)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
@@ -17,8 +23,6 @@ app.use(
     uploadDir: path.resolve(__dirname, 'upload-file'),
   }),
 )
-// 在注册路由之前注册 cors 中间价
-app.use(cors())
 
 const router = express.Router()
 

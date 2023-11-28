@@ -49,8 +49,16 @@ export function encode(val: string): string {
  * @param from - 合并的源对象
  * @returns 合并后的对象
  */
-export function extend<T, U>(to: T, from: U): T & U {
-  for (const key in from) {
+export function extend<T, U>(
+  to: T,
+  from: U,
+  options: { allOwnKeys?: boolean } = {},
+): T & U {
+  const keys = (
+    options.allOwnKeys ? Object.getOwnPropertyNames(from) : Object.keys(from)
+  ) as Array<keyof U>
+
+  for (const key of keys) {
     ;(to as T & U)[key] = from[key] as any
   }
 

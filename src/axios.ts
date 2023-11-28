@@ -10,7 +10,8 @@ function createInstance(config?: AxiosRequestConfig): AxiosStatic {
   const context = new Axios(config)
   const instance = Axios.prototype.request.bind(context)
 
-  extend(instance, context)
+  extend(instance, context, { allOwnKeys: true })
+  extend(instance, Axios.prototype, { allOwnKeys: true })
 
   return instance as AxiosStatic
 }

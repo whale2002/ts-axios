@@ -31,14 +31,14 @@ axios.put('http://localhost:8000/extend/put', { msg: 'put' })
 axios.patch('http://localhost:8000/extend/patch', { msg: 'patch' })
 
 axios({
-  url: '/extend/post',
+  url: 'http://localhost:8000/extend/post',
   method: 'post',
   data: {
     msg: 'hi',
   },
 })
 
-axios('/extend/post', {
+axios('http://localhost:8000/extend/post', {
   method: 'post',
   data: {
     msg: 'hello',
@@ -57,7 +57,7 @@ interface User {
 }
 
 function getUser<T>() {
-  return axios<ResponseData<T>>('/extend/user').then(
+  return axios<ResponseData<T>>('http://localhost:8000/extend/user').then(
     (res) => res.data,
     (e) => console.log(e),
   )

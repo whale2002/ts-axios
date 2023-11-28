@@ -102,7 +102,7 @@ export class Axios {
     config?: AxiosRequestConfig,
   ) {
     return this.request(
-      Object.assign(config, {
+      Object.assign(config || {}, {
         method,
         url,
         data,
