@@ -7,6 +7,10 @@
     "build": "turbo build",
     "format": "prettier --write \"**/*.{ts,tsx,js,md}\""
   },
+  "devDependencies": {
+    "prettier": "^3.1.0",
+    "turbo": "latest"
+  },
   "author": {
     "name": "haoyu.qin",
     "email": "bjfuchin@gmail.com",
