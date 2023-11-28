@@ -1,4 +1,4 @@
-import axios from '../../src/index'
+import axios from '@whale2002/ts-axios'
 
 axios.interceptors.request.use((config) => {
   config.headers.test += '1'
@@ -29,7 +29,7 @@ axios.interceptors.response.use((res) => {
 axios.interceptors.response.eject(interceptor)
 
 axios({
-  url: '/interceptor/get',
+  url: 'http://127.0.0.1:8000/interceptor/get',
   method: 'get',
   headers: {
     test: '',
