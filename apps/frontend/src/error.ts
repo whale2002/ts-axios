@@ -1,5 +1,5 @@
-import axios from '../../src'
-import type { AxiosError } from '../../src'
+import axios from '@whale2002/ts-axios'
+import type { AxiosError } from '@whale2002/ts-axios'
 
 // 地址不存在，返回404
 axios({

@@ -1,4 +1,4 @@
-import axios from '../../src'
+import axios from '@whale2002/ts-axios'
 
 axios({
   url: 'http://localhost:8000/extend/post',

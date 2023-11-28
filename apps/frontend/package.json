@@ -14,10 +14,11 @@
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.45.0",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "@types/qs": "^6.9.10"
   },
   "dependencies": {
-    "@types/qs": "^6.9.10",
+    "@whale2002/ts-axios": "*",
     "qs": "^6.11.2"
   }
 }

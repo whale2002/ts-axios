@@ -1,5 +1,5 @@
-import axios from '../../src'
-import { Canceler } from '../../src/types'
+import axios from '@whale2002/ts-axios'
+import type { Canceler } from '@whale2002/ts-axios'
 
 const CancelToken = axios.CancelToken
 const source = CancelToken.source()

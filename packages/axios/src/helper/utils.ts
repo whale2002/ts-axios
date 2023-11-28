@@ -59,6 +59,7 @@ export function extend<T, U>(
   ) as Array<keyof U>
 
   for (const key of keys) {
+    // eslint-disable-next-line no-extra-semi
     ;(to as T & U)[key] = from[key] as any
   }
 

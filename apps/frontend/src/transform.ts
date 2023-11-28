@@ -1,4 +1,4 @@
-import axios, { AxiosTransformer } from '../../src'
+import axios, { AxiosTransformer } from '@whale2002/ts-axios'
 import qs from 'qs'
 
 axios({

@@ -12,11 +12,11 @@ export default class CancelToken {
 
   constructor(executor: CancelExecutor) {
     let resolvePromise: ResolvePromise
-    this.promise = new Promise<Cancel>(resolve => {
+    this.promise = new Promise<Cancel>((resolve) => {
       resolvePromise = resolve
     })
 
-    executor(message => {
+    executor((message) => {
       if (this.reason) {
         return
       }
@@ -33,12 +33,12 @@ export default class CancelToken {
 
   static source(): CancelTokenSource {
     let cancel!: Canceler
-    const token = new CancelToken(c => {
+    const token = new CancelToken((c) => {
       cancel = c
     })
     return {
       cancel,
-      token
+      token,
     }
   }
 }
