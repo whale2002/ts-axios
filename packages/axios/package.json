@@ -10,11 +10,16 @@
     "build:deps": "father prebundle",
     "prepublishOnly": "father doctor && npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "axios",
+    "typescript",
+    "ts-axios"
+  ],
   "authors": [],
   "license": "MIT",
   "files": [
-    "esm"
+    "esm",
+    "README.md"
   ],
   "publishConfig": {
     "access": "public",
