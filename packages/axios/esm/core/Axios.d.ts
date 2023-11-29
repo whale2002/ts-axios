@@ -19,4 +19,3 @@ export declare class Axios {
     private _requestMethodWithoutData;
     private _requestMethodWithData;
 }
-//# sourceMappingURL=Axios.d.ts.map

@@ -37,4 +37,3 @@ export declare function extend<T, U>(to: T, from: U, options?: {
  * @returns 合并后的对象
  */
 export declare function deepMerge(...objs: any[]): any;
-//# sourceMappingURL=utils.d.ts.map

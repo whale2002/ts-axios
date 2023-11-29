@@ -8,4 +8,3 @@ export declare class AxiosError extends Error {
     constructor(message: string, config: AxiosRequestConfig, code?: string | null, request?: XMLHttpRequest, response?: AxiosResponse);
 }
 export declare function createError(message: string, config: AxiosRequestConfig, code?: string | null, request?: XMLHttpRequest, response?: AxiosResponse): AxiosError;
-//# sourceMappingURL=error.d.ts.map

@@ -5,4 +5,3 @@ import type { AxiosRequestConfig, AxiosResponse } from '../types';
  * @returns promise
  */
 export default function xhr(config: AxiosRequestConfig): Promise<AxiosResponse<any>>;
-//# sourceMappingURL=xhr.d.ts.map

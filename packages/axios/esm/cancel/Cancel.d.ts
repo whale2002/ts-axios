@@ -3,4 +3,3 @@ export default class Cancel {
     constructor(message?: string);
 }
 export declare function isCancel(value: any): boolean;
-//# sourceMappingURL=Cancel.d.ts.map

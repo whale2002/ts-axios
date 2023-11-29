@@ -7,4 +7,3 @@ export default class CancelToken {
     throwIfRequested(): void;
     static source(): CancelTokenSource;
 }
-//# sourceMappingURL=CancelToken.d.ts.map

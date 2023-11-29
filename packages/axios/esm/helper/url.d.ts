@@ -5,4 +5,3 @@
  * @returns 拼接后的url
  */
 export declare function buildURL(url: string, params?: any): string;
-//# sourceMappingURL=url.d.ts.map

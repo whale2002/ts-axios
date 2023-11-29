@@ -18,7 +18,7 @@
     "@types/qs": "^6.9.10"
   },
   "dependencies": {
-    "@whale2002/ts-axios": "*",
+    "@whale2002/ts-axios": "workspace:*",
     "qs": "^6.11.2"
   }
 }

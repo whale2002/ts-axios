@@ -92,4 +92,3 @@ export interface Cancel {
 export interface CancelStatic {
     new (message?: string): Cancel;
 }
-//# sourceMappingURL=index.d.ts.map

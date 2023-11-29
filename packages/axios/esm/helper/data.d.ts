@@ -10,4 +10,3 @@ export declare function stringifyRequestData(data: any): any;
  * @returns 转换后的数据
  */
 export declare function parseResponseData(data: any): any;
-//# sourceMappingURL=data.d.ts.map

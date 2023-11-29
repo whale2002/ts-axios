@@ -11,4 +11,3 @@ export default class InterceptorManager<T> {
     eject(id: number): void;
 }
 export {};
-//# sourceMappingURL=InterceptorManager.d.ts.map
