@@ -172,10 +172,6 @@ function registerCancelRouter() {
 }
 
 function registerMoreRouter() {
-  router.get('/more/get', function (req, res) {
-    res.json(req.cookies)
-  })
-
   router.post('/more/upload', function (req, res) {
     console.log(req.body, req.files)
     res.end('upload success!')

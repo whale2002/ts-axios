@@ -5,6 +5,8 @@ import { stringifyRequestData, parseResponseData } from './helper/data'
 const config: AxiosRequestConfig = {
   method: 'get',
   timeout: 0,
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
   headers: {
     common: {
       Accept: 'application/json, text/plain, */*',

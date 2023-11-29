@@ -1,5 +1,7 @@
 import { parseHeaders } from '../helper/headers'
 import { createError } from '../helper/error'
+import { isURLSameOrigin } from '../helper/url'
+import cookie from '../helper/cookie'
 import type { AxiosRequestConfig, AxiosResponse } from '../types'
 
 /**
@@ -17,12 +19,19 @@ export default function xhr(config: AxiosRequestConfig) {
       responseType,
       timeout,
       cancelToken,
+      withCredentials,
+      xsrfCookieName,
+      xsrfHeaderName,
     } = config
     const request = new XMLHttpRequest()
 
     if (responseType) {
       request.responseType = responseType
     }
+    if (withCredentials) {
+      request.withCredentials = withCredentials
+    }
+
     request.open(method.toUpperCase(), url, true)
 
     request.onreadystatechange = function () {
@@ -65,6 +74,12 @@ export default function xhr(config: AxiosRequestConfig) {
       )
     }
 
+    if ((withCredentials || isURLSameOrigin(url)) && xsrfCookieName) {
+      const xsrfValue = cookie.read(xsrfCookieName)
+      if (xsrfValue) {
+        headers[xsrfHeaderName] = xsrfValue
+      }
+    }
     Object.keys(headers).forEach((name) => {
       // data 为空，且设置了 content-type 是没有意义的
       if (data === null && name.toLowerCase() === 'content-type') {
