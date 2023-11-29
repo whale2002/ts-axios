@@ -26,4 +26,27 @@ dist-ssr
 
 .turbo
 
-pnpm-lock.yaml
+pnpm-lock.yaml*
+yarn.lock*
+package-lock.json*
+
+# Mac
+.DS_Store
+
+# Linux
+.local
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# IDE
+.idea
+.vscode
+.vscode-test
+
+# Config files
+.env
+.env.local
+.env.development
+.env.production
