@@ -14,7 +14,7 @@ pnpm run dev
 pnpm run build
 ```
 
-```
+```bash
 nrm use npm
 npm publish
 ```

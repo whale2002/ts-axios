@@ -23,4 +23,6 @@ npm install pnpm -g
 pnpm install
 pnpm run dev
 pnpm run build
+
+pnpm run pub
 ```

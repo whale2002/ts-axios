@@ -1,6 +1,6 @@
 {
   "name": "@whale2002/ts-axios",
-  "version": "0.6.1",
+  "version": "0.6.4",
   "description": "rewrite axios in typescript",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
@@ -19,7 +19,8 @@
   "license": "MIT",
   "files": [
     "esm",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "publishConfig": {
     "access": "public",
