@@ -14,7 +14,7 @@ export function isDate(val: any): val is Date {
  * @param val 要判断的值
  * @returns 如果值为对象类型则返回true，否则返回false
  */
-export function isObject(val: any): val is Object {
+export function isObject(val: any): boolean {
   return val !== null && typeof val === 'object'
 }
 
@@ -23,7 +23,7 @@ export function isObject(val: any): val is Object {
  * @param val 要判断的值
  * @returns 如果值为普通对象则返回true，否则返回false
  */
-export function isPlainObject(val: any): val is Object {
+export function isPlainObject(val: any): boolean {
   return toString.call(val) === '[object Object]'
 }
 
@@ -91,4 +91,8 @@ export function deepMerge(...objs: any[]): any {
   })
 
   return result
+}
+
+export function isFormData(val: any): val is FormData {
+  return typeof val !== 'undefined' && val instanceof FormData
 }

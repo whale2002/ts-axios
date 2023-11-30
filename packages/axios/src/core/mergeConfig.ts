@@ -4,7 +4,7 @@ import { AxiosRequestConfig } from '../types'
 type RequestConfigKey = keyof AxiosRequestConfig
 
 const strategyKeysFromConfig2 = ['url', 'params', 'data']
-const strategyKeysDeepMerge = ['headers']
+const strategyKeysDeepMerge = ['headers', 'auth']
 const strategys = Object.create(null)
 strategyKeysFromConfig2.forEach((key) => {
   strategys[key] = fromConfig2Strategy

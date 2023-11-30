@@ -5,9 +5,22 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Vanilla</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    />
   </head>
   <body>
-    <div id="root"></div>
+    <h1>file download</h1>
+    <div>
+      <button id="download" class="btn btn-primary">Download</button>
+    </div>
+    <h1>file upload</h1>
+    <form role="form" class="form" onsubmit="return false;">
+      <input id="file" type="file" class="form-control" />
+      <button id="upload" type="button" class="btn btn-primary">Upload</button>
+    </form>
     <!-- <script type="module" src="src/base.ts"></script> -->
     <!-- <script type="module" src="src/error.ts"></script> -->
     <!-- <script type="module" src="src/config.ts"></script> -->

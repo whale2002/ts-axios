@@ -17,6 +17,10 @@ export type Method =
 export interface AxiosTransformer {
   (data: any, header?: any): any
 }
+export interface AxiosBasicCredentials {
+  username: string
+  password: string
+}
 
 export interface AxiosRequestConfig {
   url?: string
@@ -32,6 +36,9 @@ export interface AxiosRequestConfig {
   withCredentials?: boolean
   xsrfCookieName?: string
   xsrfHeaderName?: string
+  onDownloadProgress?: (e: ProgressEvent) => void
+  onUploadProgress?: (e: ProgressEvent) => void
+  auth?: AxiosBasicCredentials
 }
 
 export interface AxiosResponse<T = any> {

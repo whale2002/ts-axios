@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(
   multipart({
-    uploadDir: path.resolve(__dirname, 'upload-file'),
+    uploadDir: path.resolve(__dirname, 'upload'),
   }),
 )
 

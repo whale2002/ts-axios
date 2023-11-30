@@ -1,5 +1,11 @@
 # @whale2002/ts-axios
 
+## 0.7.0
+
+### Minor Changes
+
+- 新增上传和下载进度监控，http 授权
+
 ## 0.6.4
 
 ### Patch Changes

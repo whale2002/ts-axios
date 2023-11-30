@@ -1,5 +1,13 @@
 # frontend
 
+## 0.0.4
+
+### Patch Changes
+
+- 新增上传和下载进度监控，http 授权
+- Updated dependencies
+  - @whale2002/ts-axios@0.7.0
+
 ## 0.0.3
 
 ### Patch Changes

@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,15 +10,17 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/qs": "^6.9.10",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.45.0",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-    "@types/qs": "^6.9.10"
+    "vite": "^4.4.5"
   },
   "dependencies": {
+    "@types/nprogress": "^0.2.3",
     "@whale2002/ts-axios": "workspace:*",
+    "nprogress": "^0.2.0",
     "qs": "^6.11.2"
   }
 }
