@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "format": "prettier --write \"**/*.{ts,tsx,js,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,js,md}\"",
+    "version": "changeset add && changeset version && changeset publish"
   },
   "devDependencies": {
     "prettier": "^3.1.0",
@@ -15,5 +16,8 @@
     "name": "haoyu.qin",
     "email": "bjfuchin@gmail.com",
     "url": "https://github.com/whale2002"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.1"
   }
 }

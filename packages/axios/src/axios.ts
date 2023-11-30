@@ -17,10 +17,10 @@ function createInstance(config?: AxiosRequestConfig): AxiosStatic {
 }
 
 const axios = createInstance(defaults)
+
 axios.create = function (instanceConfig) {
   return createInstance(mergeConfig(defaults, instanceConfig))
 }
-
 axios.CancelToken = CancelToken
 axios.Cancel = Cancel
 axios.isCancel = isCancel

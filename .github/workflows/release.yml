@@ -1,34 +1,29 @@
-name: Release Publish
+name: Release
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  build:
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm i pnpm -g
-      - run: pnpm install
-      - run: pnpm run build
+      - name: Checkout Repo
+        uses: actions/checkout@v3
 
-  # publish-npm:
-  #   needs: [lint, test]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 18
-  #         registry-url: https://registry.npmjs.org/
-  #     - run: npm i pnpm -g
-  #     - run: pnpm install
-  #     - run: pnpm run build
-  #     - run: pnpm run changeset:publish
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Create Release Pull Request
+        uses: changesets/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
