@@ -6,6 +6,7 @@ type RequestConfigKey = keyof AxiosRequestConfig
 const strategyKeysFromConfig2 = ['url', 'params', 'data']
 const strategyKeysDeepMerge = ['headers', 'auth']
 const strategys = Object.create(null)
+
 strategyKeysFromConfig2.forEach((key) => {
   strategys[key] = fromConfig2Strategy
 })
@@ -23,11 +24,11 @@ export default function mergeConfig(
 
   const config = Object.create(null)
 
-  for (let key in config2) {
+  for (const key in config2) {
     mergeField(key as RequestConfigKey)
   }
 
-  for (let key in config1) {
+  for (const key in config1) {
     if (!config2[key as RequestConfigKey]) {
       mergeField(key as RequestConfigKey)
     }

@@ -1,4 +1,4 @@
-import axios from '@whale2002/ts-axios'
+import axios, { AxiosError } from '@whale2002/ts-axios'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
@@ -68,19 +68,41 @@ uploadEl!.addEventListener('click', () => {
   }
 })
 
+// axios
+//   .post(
+//     'http://localhost:8000/more/post',
+//     {
+//       a: 1,
+//     },
+//     {
+//       auth: {
+//         username: 'Yee',
+//         password: '123456',
+//       },
+//     },
+//   )
+//   .then((res) => {
+//     console.log(res)
+//   })
+
 axios
-  .post(
-    'http://localhost:8000/more/post',
-    {
-      a: 1,
-    },
-    {
-      auth: {
-        username: 'Yee',
-        password: '123456',
-      },
-    },
-  )
+  .get('http://localhost:8000/more/304')
   .then((res) => {
     console.log(res)
+  })
+  .catch((e: AxiosError) => {
+    console.log(e.message)
+  })
+
+axios
+  .get('http://localhost:8000/more/304', {
+    validateStatus(status) {
+      return status >= 200 && status < 400
+    },
+  })
+  .then((res) => {
+    console.log(res)
+  })
+  .catch((e: AxiosError) => {
+    console.log(e.message)
   })

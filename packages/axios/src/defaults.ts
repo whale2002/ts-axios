@@ -23,6 +23,9 @@ const config: AxiosRequestConfig = {
       return parseResponseData(data)
     },
   ],
+  validateStatus(status: number): boolean {
+    return status >= 200 && status < 300
+  }
 }
 
 const methodsWithoutData = ['delete', 'get', 'head', 'options']

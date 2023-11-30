@@ -1,5 +1,12 @@
 # frontend
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies
+  - @whale2002/ts-axios@0.7.1
+
 ## 0.0.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @whale2002/ts-axios
 
+## 0.7.1
+
+### Patch Changes
+
+- 自定义合法状态码
+
 ## 0.7.0
 
 ### Minor Changes
