@@ -1,5 +1,11 @@
 # frontend
 
+## 0.0.6
+
+### Patch Changes
+
+- 新增自定义参数序列化功能
+
 ## 0.0.5
 
 ### Patch Changes

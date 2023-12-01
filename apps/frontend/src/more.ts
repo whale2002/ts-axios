@@ -1,4 +1,5 @@
 import axios, { AxiosError } from '@whale2002/ts-axios'
+import qs from 'qs'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
@@ -20,7 +21,7 @@ import 'nprogress/nprogress.css'
 //   xsrfHeaderName: 'X-XSRF-TOKEN-D'
 // })
 
-const instance = axios.create()
+const instance1 = axios.create()
 
 function calculatePercentage(loaded: number, total: number) {
   return Math.floor(loaded * 1.0) / total
@@ -30,14 +31,14 @@ const update = (e: ProgressEvent) => {
   NProgress.set(calculatePercentage(e.loaded, e.total))
 }
 
-instance.defaults.onDownloadProgress = update
-instance.defaults.onUploadProgress = update
+instance1.defaults.onDownloadProgress = update
+instance1.defaults.onUploadProgress = update
 
-instance.interceptors.request.use((config) => {
+instance1.interceptors.request.use((config) => {
   NProgress.start()
   return config
 })
-instance.interceptors.response.use(
+instance1.interceptors.response.use(
   (response) => {
     NProgress.done()
     return response
@@ -68,22 +69,22 @@ uploadEl!.addEventListener('click', () => {
   }
 })
 
-// axios
-//   .post(
-//     'http://localhost:8000/more/post',
-//     {
-//       a: 1,
-//     },
-//     {
-//       auth: {
-//         username: 'Yee',
-//         password: '123456',
-//       },
-//     },
-//   )
-//   .then((res) => {
-//     console.log(res)
-//   })
+axios
+  .post(
+    'http://localhost:8000/more/post',
+    {
+      a: 1,
+    },
+    {
+      auth: {
+        username: 'Yee',
+        password: '123456',
+      },
+    },
+  )
+  .then((res) => {
+    console.log(res)
+  })
 
 axios
   .get('http://localhost:8000/more/304')
@@ -106,3 +107,42 @@ axios
   .catch((e: AxiosError) => {
     console.log(e.message)
   })
+
+axios
+  .get('http://localhost:8000/more/get', {
+    params: new URLSearchParams('a=b&c=d'),
+  })
+  .then((res) => {
+    console.log(res)
+  })
+
+axios
+  .get('http://localhost:8000/more/get', {
+    params: {
+      a: 1,
+      b: 2,
+      c: ['a', 'b', 'c'],
+    },
+  })
+  .then((res) => {
+    console.log(res)
+  })
+
+const instance = axios.create({
+  paramsSerializer(params) {
+    return qs.stringify(params, { arrayFormat: 'brackets' })
+  },
+})
+
+instance
+  .get('http://localhost:8000/more/get', {
+    params: {
+      a: 1,
+      b: 2,
+      c: ['a', 'b', 'c'],
+    },
+  })
+  .then((res) => {
+    console.log(res)
+  })
+

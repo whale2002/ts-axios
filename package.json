@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "format": "prettier --write \"**/*.{ts,tsx,js,md}\"",
-    "pub": "changeset add && changeset version && changeset publish"
+    "build:axios": "pnpm --filter @whale2002/ts-axios build",
+    "pub": "changeset add && changeset version && changeset publish",
+    "format": "prettier --write \"**/*.{ts,tsx,js,md}\""
   },
   "devDependencies": {
     "prettier": "^3.1.0",

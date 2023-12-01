@@ -28,6 +28,20 @@ export function isPlainObject(val: any): boolean {
 }
 
 /**
+ * 判断一个值是否为FormData类型
+ * @param val 要判断的值
+ * @returns 如果val不是未定义且是FormData类型，则返回true；否则返回false
+ */
+export function isFormData(val: any): val is FormData {
+  return typeof val !== 'undefined' && val instanceof FormData
+}
+
+/**判断一个值是否为 URLSearchParams 类型 */
+export function isURLSearchParams(val: any): val is URLSearchParams {
+  return typeof val !== 'undefined' && val instanceof URLSearchParams
+}
+
+/**
  * 对给定的字符串进行编码
  * @param val 需要编码的字符串
  * @returns 编码后的字符串
@@ -91,8 +105,4 @@ export function deepMerge(...objs: any[]): any {
   })
 
   return result
-}
-
-export function isFormData(val: any): val is FormData {
-  return typeof val !== 'undefined' && val instanceof FormData
 }

@@ -1,4 +1,4 @@
-import { isDate, isObject, encode } from './utils'
+import { isDate, isObject, isURLSearchParams, encode } from './utils'
 
 /**
  * 将请求参数拼接到url上
@@ -6,36 +6,46 @@ import { isDate, isObject, encode } from './utils'
  * @param params 请求参数
  * @returns 拼接后的url
  */
-export function buildURL(url: string, params?: any): string {
+export function buildURL(
+  url: string,
+  params?: any,
+  paramsSerializer?: (params: any) => string,
+): string {
   if (!params) {
     return url
   }
+  let joinedParams
 
-  const parts: string[] = []
-
-  Object.keys(params).forEach((key) => {
-    const val = params[key]
-    if (val === null || typeof val === 'undefined') {
-      return
-    }
-    let values = []
-    if (Array.isArray(val)) {
-      values = val
-      key += '[]'
-    } else {
-      values = [val]
-    }
-    values.forEach((val) => {
-      if (isDate(val)) {
-        val = val.toISOString()
-      } else if (isObject(val)) {
-        val = JSON.stringify(val)
+  if (paramsSerializer) {
+    joinedParams = paramsSerializer(params)
+  } else if (isURLSearchParams(params)) {
+    joinedParams = params.toString()
+  } else {
+    const parts: string[] = []
+    Object.keys(params).forEach((key) => {
+      const val = params[key]
+      if (val === null || typeof val === 'undefined') {
+        return
       }
-      parts.push(`${encode(key)}=${encode(val)}`)
+      let values = []
+      if (Array.isArray(val)) {
+        values = val
+        key += '[]'
+      } else {
+        values = [val]
+      }
+      values.forEach((val) => {
+        if (isDate(val)) {
+          val = val.toISOString()
+        } else if (isObject(val)) {
+          val = JSON.stringify(val)
+        }
+        parts.push(`${encode(key)}=${encode(val)}`)
+      })
     })
-  })
+    joinedParams = parts.join('&')
+  }
 
-  const joinedParams = parts.join('&')
   if (joinedParams) {
     const markIndex = url.indexOf('#')
     if (markIndex !== -1) {
