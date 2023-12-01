@@ -23,6 +23,7 @@ export interface AxiosBasicCredentials {
 }
 
 export interface AxiosRequestConfig {
+  baseURL?: string
   url?: string
   method?: Method
   data?: any

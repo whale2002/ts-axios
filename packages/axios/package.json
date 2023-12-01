@@ -1,13 +1,14 @@
 {
   "name": "@whale2002/ts-axios",
-  "version": "0.7.1",
+  "version": "0.7.3",
   "description": "rewrite axios in typescript",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
   "scripts": {
     "dev": "father dev",
-    "build": "father build",
+    "build": "pnpm run clean && father build",
     "build:deps": "father prebundle",
+    "clean": "rimraf esm",
     "prepublishOnly": "father doctor && npm run build"
   },
   "keywords": [
@@ -27,7 +28,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "father": "^4.3.7"
+    "father": "^4.3.7",
+    "rimraf": "^5.0.5"
   },
   "author": {
     "name": "haoyu.qin",

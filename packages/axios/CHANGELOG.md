@@ -1,5 +1,17 @@
 # @whale2002/ts-axios
 
+## 0.7.3
+
+### Patch Changes
+
+- 支持baseURL配置
+
+## 0.7.2
+
+### Patch Changes
+
+- 自定义参数序列化
+
 ## 0.7.1
 
 ### Patch Changes

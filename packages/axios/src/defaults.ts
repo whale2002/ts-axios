@@ -2,7 +2,7 @@ import { AxiosRequestConfig } from './types'
 import { processHeaders } from './helper/headers'
 import { stringifyRequestData, parseResponseData } from './helper/data'
 
-const config: AxiosRequestConfig = {
+const config: Partial<AxiosRequestConfig> = {
   method: 'get',
   timeout: 0,
   xsrfCookieName: 'XSRF-TOKEN',
@@ -25,7 +25,7 @@ const config: AxiosRequestConfig = {
   ],
   validateStatus(status: number): boolean {
     return status >= 200 && status < 300
-  }
+  },
 }
 
 const methodsWithoutData = ['delete', 'get', 'head', 'options']
