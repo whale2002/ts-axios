@@ -1,6 +1,6 @@
 # ts-axios
 
-基于 turborepo 实现的 monorepo
+基于 pnpm + turborepo + changeset 实现的 monorepo
 
 ## Structure
 
