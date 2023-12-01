@@ -1,5 +1,11 @@
 # @whale2002/ts-axios
 
+## 1.0.0
+
+### Major Changes
+
+- 正式发布
+
 ## 0.7.4
 
 ### Patch Changes
