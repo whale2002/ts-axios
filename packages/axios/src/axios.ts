@@ -21,6 +21,16 @@ const axios = createInstance(defaults)
 axios.create = function (instanceConfig) {
   return createInstance(mergeConfig(defaults, instanceConfig))
 }
+axios.all = function (promises) {
+  return Promise.all(promises)
+}
+axios.spread = function (callback) {
+  return function wrap(arr) {
+    // eslint-disable-next-line prefer-spread
+    return callback.apply(null, arr)
+  }
+}
+axios.Axios = Axios
 axios.CancelToken = CancelToken
 axios.Cancel = Cancel
 axios.isCancel = isCancel

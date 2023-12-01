@@ -1,5 +1,11 @@
 # @whale2002/ts-axios
 
+## 0.7.4
+
+### Patch Changes
+
+- 剩余功能完善
+
 ## 0.7.3
 
 ### Patch Changes
